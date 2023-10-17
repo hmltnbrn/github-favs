@@ -1,0 +1,26 @@
+html {
+    width: 100%;
+}
+
+body {
+    font-size: 13px;
+    width: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+a:link,
+a:visited,
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}

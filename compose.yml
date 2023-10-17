@@ -1,0 +1,45 @@
+services:
+  client:
+    build:
+      context: client
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    restart: always
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - the-net
+    depends_on:
+      - server
+
+  server:
+    restart: always
+    build:
+      context: server
+    ports:
+      - 3001:3001
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on:
+      - reposerver
+    networks:
+      - the-net
+    expose:
+      - 3001
+
+  reposerver:
+    ports:
+      - 8080:8080
+    image: "gcr.io/hiring-278615/reposerver:v1.1"
+    networks:
+      - the-net
+    expose:
+      - 8080
+networks:
+  the-net:

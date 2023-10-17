@@ -1,0 +1,27 @@
+.repoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.starContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    & > svg {
+        color: #eac54f;
+    }
+}
+
+.card {
+    position: relative;
+}
+
+.fullName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 95%;
+}

@@ -24,7 +24,7 @@ const sortRepos = (data, sortBy) => {
         return data.sort((a, b) => {
             return a.createdAt > b.createdAt
                 ? -1
-                : a.createdAt > b.createdAt
+                : a.createdAt < b.createdAt
                 ? 1
                 : 0;
         });
